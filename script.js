@@ -1,5 +1,6 @@
 const menuButton = document.querySelector('[data-menu-btn]');
 const navLinks = document.querySelector('[data-nav-links]');
+const siteHeader = document.querySelector('.site-header');
 
 if (menuButton && navLinks) {
   menuButton.addEventListener('click', () => {
@@ -15,8 +16,22 @@ if (menuButton && navLinks) {
   });
 }
 
+if (siteHeader) {
+  const syncHeaderState = () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+  };
+
+  syncHeaderState();
+  window.addEventListener('scroll', syncHeaderState, { passive: true });
+}
+
 const revealElements = document.querySelectorAll('.reveal');
 if (revealElements.length > 0) {
+  revealElements.forEach((el, idx) => {
+    const staggerClass = `stagger-${(idx % 4) + 1}`;
+    el.classList.add(staggerClass);
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
