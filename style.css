@@ -532,11 +532,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .lightbox-nav:hover {
-  background: rgba(255, 248, 240, 0.25);
+  background: rgba(255, 248, 240, 0.35);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .lightbox-prev {
