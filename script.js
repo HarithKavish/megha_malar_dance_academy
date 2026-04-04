@@ -47,14 +47,23 @@ if (revealElements.length > 0) {
   revealElements.forEach((el) => observer.observe(el));
 }
 
-const slides = document.querySelectorAll('.slide');
-if (slides.length > 0) {
+document.querySelectorAll('[data-rotator]').forEach((rotator) => {
+  const slides = rotator.querySelectorAll('.slide-item');
+  if (slides.length === 0) {
+    return;
+  }
+
   let index = 0;
+  const interval = Number(rotator.getAttribute('data-interval')) || 3200;
   slides[index].classList.add('active');
+
+  if (slides.length === 1) {
+    return;
+  }
 
   setInterval(() => {
     slides[index].classList.remove('active');
     index = (index + 1) % slides.length;
     slides[index].classList.add('active');
-  }, 3200);
-}
+  }, interval);
+});
