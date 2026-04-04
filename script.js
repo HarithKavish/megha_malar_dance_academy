@@ -67,3 +67,73 @@ document.querySelectorAll('[data-rotator]').forEach((rotator) => {
     slides[index].classList.add('active');
   }, interval);
 });
+
+// Lightbox functionality for gallery images
+(function() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const currentSpan = document.getElementById('lightbox-current');
+  const totalSpan = document.getElementById('lightbox-total');
+  
+  if (!lightbox) return; // Exit if not on gallery page
+  
+  const galleryImages = document.querySelectorAll('.image-grid img');
+  let currentIndex = 0;
+  
+  if (galleryImages.length > 0) {
+    totalSpan.textContent = galleryImages.length;
+    
+    // Open lightbox on image click
+    galleryImages.forEach((img, idx) => {
+      img.addEventListener('click', () => {
+        currentIndex = idx;
+        showLightbox();
+      });
+    });
+    
+    // Close lightbox
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+    
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrevious();
+      if (e.key === 'ArrowRight') showNext();
+    });
+    
+    // Navigation buttons
+    prevBtn.addEventListener('click', showPrevious);
+    nextBtn.addEventListener('click', showNext);
+    
+    function showLightbox() {
+      lightboxImage.src = galleryImages[currentIndex].src;
+      lightboxImage.alt = galleryImages[currentIndex].alt;
+      currentSpan.textContent = currentIndex + 1;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function showPrevious() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showLightbox();
+    }
+    
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showLightbox();
+    }
+  }
+})();
