@@ -7,8 +7,8 @@
   --radius: 14px;
   --shadow: 0 16px 34px rgba(31, 31, 31, 0.12);
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-  --frame-side-width: 42px;
-  --frame-top-height: 24px;
+  --frame-side-width: 60px;
+  --frame-top-height: 68px;
 }
 
 * {
@@ -52,7 +52,7 @@ main {
   background-size: 100% auto;
   background-repeat: repeat-y;
   background-position: top center;
-  opacity: 0.78;
+  opacity: 0.82;
   pointer-events: none;
 }
 
@@ -121,7 +121,7 @@ main {
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: center top;
-  opacity: 0.72;
+  opacity: 0.84;
 }
 
 .site-header.scrolled {
@@ -602,7 +602,7 @@ section {
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: center top;
-  opacity: 0.76;
+  opacity: 0.86;
 }
 
 .reveal {
@@ -693,8 +693,8 @@ section {
 
 @media (max-width: 640px) {
   :root {
-    --frame-side-width: 22px;
-    --frame-top-height: 18px;
+    --frame-side-width: 30px;
+    --frame-top-height: 48px;
   }
 
   .temple-layout::before,
