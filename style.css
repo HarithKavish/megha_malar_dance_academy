@@ -370,7 +370,8 @@ section {
   background: #0f0f0f;
 }
 
-.video-tile img {
+.video-tile img,
+.video-tile video {
   width: 100%;
   height: 260px;
   object-fit: cover;
