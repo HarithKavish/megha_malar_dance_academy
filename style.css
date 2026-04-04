@@ -45,12 +45,13 @@ main {
   top: 0;
   bottom: 0;
   width: 26px;
-  z-index: -1;
+  z-index: 1;
   background-image: url("assets/images/border-side-strip.png");
   background-size: 100% auto;
   background-repeat: repeat-y;
   background-position: top center;
-  opacity: 0.42;
+  opacity: 0.65;
+  pointer-events: none;
 }
 
 .temple-layout::before {
@@ -252,9 +253,10 @@ p {
   border: 1px solid rgba(90, 15, 28, 0.14);
   border-radius: 14px;
   display: grid;
-  grid-template-columns: 60px 1fr 60px;
-  gap: 0.7rem;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
   align-items: center;
+  justify-items: center;
   text-align: center;
   padding: 1.1rem 1rem;
 }
@@ -263,7 +265,7 @@ p {
   width: 42px;
   height: 42px;
   object-fit: contain;
-  justify-self: center;
+  display: none;
 }
 
 .quote-line {
