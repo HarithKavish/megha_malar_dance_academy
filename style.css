@@ -7,7 +7,8 @@
   --radius: 14px;
   --shadow: 0 16px 34px rgba(31, 31, 31, 0.12);
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-  --frame-side-width: 26px;
+  --frame-side-width: 42px;
+  --frame-top-height: 24px;
 }
 
 * {
@@ -51,7 +52,7 @@ main {
   background-size: 100% auto;
   background-repeat: repeat-y;
   background-position: top center;
-  opacity: 0.65;
+  opacity: 0.78;
   pointer-events: none;
 }
 
@@ -115,12 +116,12 @@ main {
   display: block;
   width: calc(100% - (var(--frame-side-width) * 2));
   margin: 0 auto;
-  height: 12px;
+  height: var(--frame-top-height);
   background-image: url("assets/images/top_ and_bottom_b.jpg");
   background-repeat: repeat-x;
-  background-size: auto 12px;
+  background-size: auto 100%;
   background-position: center top;
-  opacity: 0.55;
+  opacity: 0.72;
 }
 
 .site-header.scrolled {
@@ -596,12 +597,12 @@ section {
   display: block;
   width: calc(100% - (var(--frame-side-width) * 2));
   margin: 0 auto 0.55rem;
-  height: 12px;
+  height: var(--frame-top-height);
   background-image: url("assets/images/top_ and_bottom_b.jpg");
   background-repeat: repeat-x;
-  background-size: auto 12px;
+  background-size: auto 100%;
   background-position: center top;
-  opacity: 0.58;
+  opacity: 0.76;
 }
 
 .reveal {
@@ -692,7 +693,8 @@ section {
 
 @media (max-width: 640px) {
   :root {
-    --frame-side-width: 14px;
+    --frame-side-width: 22px;
+    --frame-top-height: 18px;
   }
 
   .temple-layout::before,
