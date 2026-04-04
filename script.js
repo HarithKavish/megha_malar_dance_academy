@@ -68,6 +68,39 @@ document.querySelectorAll('[data-rotator]').forEach((rotator) => {
   }, interval);
 });
 
+function initGalleryMasonry() {
+  const grid = document.querySelector('.image-grid');
+  if (!grid) {
+    return;
+  }
+
+  const images = Array.from(grid.querySelectorAll('img'));
+  if (images.length === 0) {
+    return;
+  }
+
+  const applyMasonry = () => {
+    const rowHeight = parseFloat(getComputedStyle(grid).getPropertyValue('grid-auto-rows')) || 8;
+    const rowGap = parseFloat(getComputedStyle(grid).getPropertyValue('gap')) || 0;
+
+    images.forEach((img) => {
+      const span = Math.max(1, Math.ceil((img.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap)));
+      img.style.gridRowEnd = `span ${span}`;
+    });
+  };
+
+  images.forEach((img) => {
+    if (!img.complete) {
+      img.addEventListener('load', applyMasonry, { once: true });
+    }
+  });
+
+  window.addEventListener('resize', applyMasonry, { passive: true });
+  applyMasonry();
+}
+
+initGalleryMasonry();
+
 // Lightbox functionality for gallery images
 (function() {
   const lightbox = document.getElementById('lightbox');
