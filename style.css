@@ -47,7 +47,7 @@ main {
   bottom: 0;
   width: var(--frame-side-width);
   z-index: 1;
-  background-image: url("assets/images/border-side-strip.png");
+  background-image: url("assets/images/left_and_right_b.jpg");
   background-size: 100% auto;
   background-repeat: repeat-y;
   background-position: top center;
@@ -116,7 +116,7 @@ main {
   width: calc(100% - (var(--frame-side-width) * 2));
   margin: 0 auto;
   height: 12px;
-  background-image: url("assets/images/border-top-strip.png");
+  background-image: url("assets/images/top_ and_bottom_b.jpg");
   background-repeat: repeat-x;
   background-size: auto 12px;
   background-position: center top;
@@ -597,7 +597,7 @@ section {
   width: calc(100% - (var(--frame-side-width) * 2));
   margin: 0 auto 0.55rem;
   height: 12px;
-  background-image: url("assets/images/border-top-strip.png");
+  background-image: url("assets/images/top_ and_bottom_b.jpg");
   background-repeat: repeat-x;
   background-size: auto 12px;
   background-position: center top;
