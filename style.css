@@ -7,8 +7,8 @@
   --radius: 14px;
   --shadow: 0 16px 34px rgba(31, 31, 31, 0.12);
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
-  --frame-side-width: 60px;
-  --frame-top-height: 68px;
+  --frame-side-width: 45px;
+  --frame-top-height: 34px;
 }
 
 * {
@@ -700,8 +700,8 @@ section {
 
 @media (max-width: 640px) {
   :root {
-    --frame-side-width: 24px;
-    --frame-top-height: 34px;
+    --frame-side-width: 18px;
+    --frame-top-height: 17px;
   }
 
   .temple-layout::before,
