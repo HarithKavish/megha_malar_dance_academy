@@ -364,16 +364,14 @@ section {
   transition: transform 0.24s var(--ease-premium), box-shadow 0.24s var(--ease-premium), border-color 0.24s var(--ease-premium), background-color 0.24s var(--ease-premium);
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .interactive-panel:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 34px rgba(31, 31, 31, 0.16);
-    border-color: rgba(201, 163, 78, 0.62);
-  }
+.interactive-panel:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 18px 34px rgba(31, 31, 31, 0.16);
+  border-color: rgba(201, 163, 78, 0.62);
+}
 
-  .quote.interactive-panel:hover {
-    background: #f4e5ce;
-  }
+.quote.interactive-panel:hover {
+  background: #f4e5ce;
 }
 
 .content-panel {
@@ -769,6 +767,10 @@ section {
 .reveal.show {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.reveal.show.interactive-panel:hover {
+  transform: translateY(-4px) scale(1.015);
 }
 
 .stagger-1 {
