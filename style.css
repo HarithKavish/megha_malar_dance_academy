@@ -206,22 +206,25 @@ main {
 
 .hero-brand-panel {
   width: min(100%, 380px);
+  aspect-ratio: 1;
   background: transparent;
-  border-radius: 0;
+  border-radius: 50%;
   box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  overflow: visible;
+  overflow: hidden;
   margin-inline: auto;
 }
 
 .academy-logo {
-  width: 100%;
-  max-width: 100%;
-  object-fit: contain;
+  width: 128%;
+  max-width: none;
+  object-fit: cover;
   display: block;
+  transform: scale(1.02);
+  transform-origin: center;
 }
 
 .kicker {
@@ -800,6 +803,10 @@ section {
 
   .hero-brand-panel {
     width: min(100%, 300px);
+  }
+
+  .academy-logo {
+    width: 124%;
   }
 
   .quote-box {
