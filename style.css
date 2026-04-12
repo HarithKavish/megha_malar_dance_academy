@@ -201,7 +201,7 @@ main {
 .hero-title span {
   display: block;
   color: var(--charcoal);
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-size: clamp(1.8rem, 4.1vw, 3rem);
 }
 
 .hero-brand-panel {
@@ -260,22 +260,22 @@ p {
   border: 1px solid rgba(90, 15, 28, 0.14);
   border-radius: 14px;
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr) 96px;
+  grid-template-columns: 120px minmax(0, 1fr) 120px;
   gap: 1rem;
   align-items: center;
   justify-items: center;
   text-align: center;
-  padding: 1.1rem 1rem;
+  padding: 1.1rem 1.2rem;
 }
 
 .quote-copy {
   display: grid;
-  gap: 0.2rem;
+  gap: 0.35rem;
   justify-items: center;
 }
 
 .quote-motif {
-  width: min(100%, 84px);
+  width: min(100%, 108px);
   height: auto;
   object-fit: contain;
   display: block;
@@ -373,11 +373,27 @@ section {
   align-items: start;
 }
 
+.guru-center {
+  text-align: center;
+}
+
 .guru-photo {
   width: 100%;
   border-radius: 14px;
   border: 1px solid rgba(201, 163, 78, 0.55);
   box-shadow: var(--shadow);
+}
+
+.guru-photo-center {
+  max-width: 340px;
+  margin: 0 auto 1rem;
+}
+
+.guru-name-line {
+  margin: 0 0 1.2rem;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  color: var(--maroon);
 }
 
 .black-panel {
@@ -392,8 +408,43 @@ section {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 0.9rem;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.location-card {
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 248, 240, 0.22);
+  min-height: 320px;
+  padding: 1.1rem;
+  color: #fff8f0;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 24px rgba(31, 31, 31, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.location-card h3 {
+  color: #fff8f0;
+  margin-bottom: 0.3rem;
+}
+
+.location-card p {
+  margin: 0;
+}
+
+.location-meta {
+  font-weight: 700;
+  color: #f5d089;
 }
 
 .video-tile {
@@ -673,6 +724,7 @@ section {
   .card-grid,
   .two-col-cards,
   .guru-layout,
+  .location-grid,
   .video-grid,
   .image-grid {
     grid-template-columns: 1fr;
