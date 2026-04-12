@@ -511,12 +511,15 @@ section {
   position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
-  width: 3rem;
-  height: 3rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  min-width: 0;
   border-radius: 999px;
   border: 1px solid rgba(255, 248, 240, 0.36);
   background: rgba(201, 163, 78, 0.88);
   color: #24190b;
+  font-size: 0;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
   display: inline-flex;
   align-items: center;
@@ -527,9 +530,9 @@ section {
 }
 
 .video-play-btn svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-left: 0.14rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-left: 0.08rem;
 }
 
 .video-tile:hover .video-play-btn {
@@ -809,13 +812,13 @@ section {
   }
 
   .video-play-btn {
-    width: 2.6rem;
-    height: 2.6rem;
+    width: 1.85rem;
+    height: 1.85rem;
   }
 
   .video-play-btn svg {
-    width: 1.05rem;
-    height: 1.05rem;
+    width: 0.82rem;
+    height: 0.82rem;
   }
 }
 
