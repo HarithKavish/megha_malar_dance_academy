@@ -205,25 +205,23 @@ main {
 }
 
 .hero-brand-panel {
-  width: min(100%, 360px);
-  aspect-ratio: 1;
-  background: radial-gradient(circle at 50% 45%, rgba(255, 217, 135, 0.5), rgba(201, 163, 78, 0.06) 60%),
-    linear-gradient(145deg, #f3e4c7, #f8f0e1);
-  border-radius: 50%;
-  box-shadow: var(--shadow);
+  width: min(100%, 380px);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.6rem;
-  overflow: hidden;
+  padding: 0;
+  overflow: visible;
   margin-inline: auto;
 }
 
 .academy-logo {
   width: 100%;
   max-width: 100%;
-  aspect-ratio: 1;
   object-fit: contain;
+  display: block;
 }
 
 .kicker {
@@ -801,8 +799,7 @@ section {
   }
 
   .hero-brand-panel {
-    width: min(100%, 280px);
-    padding: 1.15rem;
+    width: min(100%, 300px);
   }
 
   .quote-box {
