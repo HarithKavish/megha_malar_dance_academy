@@ -408,8 +408,8 @@ section {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
 }
 
 .location-grid {
@@ -419,6 +419,8 @@ section {
 }
 
 .location-card {
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid rgba(255, 248, 240, 0.22);
   min-height: 320px;
@@ -431,6 +433,18 @@ section {
   flex-direction: column;
   justify-content: flex-end;
   gap: 0.45rem;
+}
+
+.location-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.62));
+}
+
+.location-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .location-card h3 {
@@ -450,9 +464,19 @@ section {
 .video-tile {
   position: relative;
   margin: 0;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 248, 240, 0.26);
   overflow: hidden;
   background: #0f0f0f;
+  padding: 0.55rem;
+  box-shadow: 0 10px 24px rgba(31, 31, 31, 0.24);
+  transition: transform 0.22s var(--ease-premium), box-shadow 0.22s var(--ease-premium), border-color 0.22s var(--ease-premium);
+}
+
+.video-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 163, 78, 0.52);
+  box-shadow: 0 14px 30px rgba(31, 31, 31, 0.34);
 }
 
 .video-tile img,
@@ -462,6 +486,7 @@ section {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 
 .play-badge {
@@ -782,5 +807,13 @@ section {
 
   .quote-motif {
     width: 96px;
+  }
+
+  .location-card {
+    min-height: 260px;
+  }
+
+  .video-grid {
+    gap: 0.9rem;
   }
 }
