@@ -415,10 +415,11 @@ section {
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .location-grid {
@@ -473,6 +474,9 @@ section {
 .video-tile {
   position: relative;
   margin: 0;
+  flex: 1 1 360px;
+  max-width: 420px;
+  width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(255, 248, 240, 0.26);
   overflow: hidden;
@@ -511,8 +515,8 @@ section {
   position: absolute;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 2.35rem;
+  height: 2.35rem;
   padding: 0;
   min-width: 0;
   border-radius: 999px;
@@ -530,9 +534,9 @@ section {
 }
 
 .video-play-btn svg {
-  width: 0.95rem;
-  height: 0.95rem;
-  margin-left: 0.08rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-left: 0.1rem;
 }
 
 .video-tile:hover .video-play-btn {
@@ -801,9 +805,17 @@ section {
   .two-col-cards,
   .guru-layout,
   .location-grid,
-  .video-grid,
   .image-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-grid {
+    justify-content: stretch;
+  }
+
+  .video-tile {
+    flex-basis: 100%;
+    max-width: none;
   }
 
   .video-tile img,
@@ -812,13 +824,13 @@ section {
   }
 
   .video-play-btn {
-    width: 1.85rem;
-    height: 1.85rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .video-play-btn svg {
-    width: 0.82rem;
-    height: 0.82rem;
+    width: 0.9rem;
+    height: 0.9rem;
   }
 }
 
