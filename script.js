@@ -68,6 +68,25 @@ document.querySelectorAll('[data-rotator]').forEach((rotator) => {
   }, interval);
 });
 
+const aboutBgTrigger = document.querySelector('[data-bg-target]');
+if (aboutBgTrigger) {
+  const target = aboutBgTrigger.getAttribute('data-bg-target');
+  if (target) {
+    document.addEventListener('click', (event) => {
+      if (!document.body.classList.contains('about-page')) {
+        return;
+      }
+
+      const clickedInsidePanel = event.target.closest('.content-panel, .site-header, .footer, a, button');
+      if (clickedInsidePanel) {
+        return;
+      }
+
+      window.location.href = target;
+    });
+  }
+}
+
 function initGalleryMasonry() {
   const grid = document.querySelector('.image-grid');
   if (!grid) {
@@ -129,6 +148,8 @@ function initGalleryVideos() {
       tile.classList.toggle('is-playing', isPlaying);
       video.controls = isPlaying;
     };
+
+    video.controls = false;
 
     playButton.addEventListener('click', async () => {
       pauseOtherVideos(video);

@@ -115,15 +115,7 @@ main {
 }
 
 .site-header::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: var(--frame-top-height);
-  background-image: url("assets/images/top_ and_bottom_b.jpg");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: center top;
-  opacity: 0.84;
+  display: none;
 }
 
 .site-header.scrolled {
@@ -198,13 +190,21 @@ main {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(1.2rem, 2.4vw, 2rem);
-  align-items: center;
+  align-items: end;
+}
+
+.hero-copy {
+  padding-bottom: 0.8rem;
 }
 
 .hero-title span {
   display: block;
-  color: var(--charcoal);
+  color: #d8af3a;
   font-size: clamp(1.8rem, 4.1vw, 3rem);
+}
+
+.hero-title {
+  color: #d8af3a;
 }
 
 .hero-brand-panel {
@@ -224,12 +224,16 @@ main {
 
 .academy-logo {
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: none;
   object-fit: contain;
   object-position: center;
   display: block;
   border-radius: 50%;
+}
+
+.hero-copy .btn {
+  margin-top: 2.2rem;
 }
 
 .kicker {
@@ -263,6 +267,18 @@ h3 {
 
 p {
   margin: 0 0 1rem;
+}
+
+.academy-tagline {
+  font-family: "Inter", "Lato", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+.about-teaser .btn {
+  margin-top: 1.5rem;
 }
 
 .quote-box {
@@ -385,9 +401,31 @@ section {
 }
 
 .about-page .content-panel {
-  background: rgba(255, 248, 240, 0.86);
-  border: 1px solid rgba(201, 163, 78, 0.4);
+  background: rgba(8, 8, 8, 0.42);
+  border: 1px solid rgba(255, 248, 240, 0.24);
   backdrop-filter: blur(1.8px) saturate(1.08);
+  color: #fff;
+}
+
+.about-page .content-panel h1,
+.about-page .content-panel h2,
+.about-page .content-panel h3 {
+  color: #f5d089;
+}
+
+.about-page .page-bg-slideshow {
+  cursor: pointer;
+}
+
+.about-page .bg-slide {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #050506;
+  transform: none;
+}
+
+.about-page .bg-slide.active {
+  transform: none;
 }
 
 .guru-layout {
@@ -485,6 +523,15 @@ section {
 .location-meta {
   font-weight: 700;
   color: #f5d089;
+}
+
+.timings-block {
+  margin-top: 0.45rem;
+}
+
+.timings-block p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .video-tile {
@@ -715,6 +762,54 @@ section {
   gap: 0.8rem;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.contact-logo-wrap {
+  width: min(100%, 270px);
+}
+
+.contact-actions {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: start;
+}
+
+.contact-inline {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-decoration: none;
+  transition: transform var(--motion-standard);
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+}
+
+.icon-btn svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .social-icon {
   width: 46px;
   height: 46px;
@@ -748,16 +843,7 @@ section {
 }
 
 .footer::before {
-  content: "";
-  display: block;
-  width: 100%;
-  margin: 0 auto 0.55rem;
-  height: var(--frame-top-height);
-  background-image: url("assets/images/top_ and_bottom_b.jpg");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: center top;
-  opacity: 0.86;
+  display: none;
 }
 
 .reveal {
@@ -773,6 +859,22 @@ section {
 
 .reveal.show.interactive-panel:hover {
   transform: translateY(-4px) scale(1.015);
+}
+
+.why-intro {
+  padding-bottom: 0.5rem;
+}
+
+.why-body {
+  padding-top: 0.55rem;
+}
+
+.about-guru-page .content-panel p {
+  text-align: justify;
+}
+
+.classes-enroll-wrap {
+  margin-top: 1rem;
 }
 
 .stagger-1 {
@@ -825,8 +927,18 @@ section {
   .two-col-cards,
   .guru-layout,
   .location-grid,
+  .contact-layout,
   .image-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    justify-items: start;
+  }
+
+  .contact-logo-wrap {
+    width: min(100%, 220px);
+    justify-self: center;
   }
 
   .video-grid {
@@ -897,6 +1009,10 @@ section {
     border-radius: 50%;
   }
 
+  .hero-copy .btn {
+    margin-top: 1.2rem;
+  }
+
   .quote-box {
     grid-template-columns: 1fr;
     gap: 0.6rem;
@@ -912,5 +1028,9 @@ section {
 
   .video-grid {
     gap: 0.85rem;
+  }
+
+  .contact-inline {
+    gap: 0.5rem;
   }
 }
