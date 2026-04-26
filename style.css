@@ -515,13 +515,8 @@ section {
   border-bottom: 1px solid rgba(90, 15, 28, 0.13);
 }
 
-.location-card > :not(.location-image):not(.location-map) {
-  padding: 0 1.2rem;
-}
-
-.location-card > h3 {
-  padding-top: 1.2rem;
-  padding-bottom: 0.3rem;
+.location-content {
+  padding: 1.2rem;
 }
 
 .location-card::before {
@@ -536,7 +531,7 @@ section {
 
 .location-card h3 {
   color: var(--maroon);
-  margin-bottom: 0.3rem;
+  margin: 0 0 0.45rem;
   font-weight: 700;
 }
 
@@ -546,12 +541,10 @@ section {
 }
 
 .location-address {
-  margin: 0.35rem 0 0.65rem;
+  margin: 0 0 0.7rem;
   font-size: 0.95rem;
   color: var(--charcoal);
   line-height: 1.4;
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
 }
 
 .location-map-link {
@@ -563,7 +556,6 @@ section {
   font-weight: 600;
   font-size: 0.95rem;
   transition: color var(--motion-standard);
-  padding: 0 1.2rem 1.2rem 1.2rem;
 }
 
 .location-map-link:hover {
