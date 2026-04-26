@@ -506,7 +506,16 @@ section {
   border-bottom: 1px solid rgba(90, 15, 28, 0.13);
 }
 
-.location-card > :not(.location-image) {
+.location-map {
+  width: 100%;
+  height: 220px;
+  border: none;
+  border-radius: 0;
+  display: block;
+  border-bottom: 1px solid rgba(90, 15, 28, 0.13);
+}
+
+.location-card > :not(.location-image):not(.location-map) {
   padding: 0 1.2rem;
 }
 
